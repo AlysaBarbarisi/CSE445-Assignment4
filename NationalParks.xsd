@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://w3.org">
+
+    <!--Root Element-->
+    <xs:element name="NationalParks">
+        <xs:complexType>
+            <xs:sequence>
+                <!--One or more NationalPark elements-->
+                <xs:element name="NationalPark" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <!--1.Name-->
+                            <xs:element name="Name" type="xs:string" />
+                            <!--2. Phone-->
+                            <xs:element name="Phone" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
+                            <!--Address-->
+                            <xs:element name="Address">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Number" type="xs:string" />
+                                        <xs:element name="Street" type="xs:string" />
+                                        <xs:element name="City" type="xs:string" />
+                                        <xs:element name="State" type="xs:string" />
+                                        <xs:element name="Zip" type="xs:string" />
+                                    </xs:squence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <!--attributes-->
+                        <xs:attribute name="NearestAirport" type="xs:string" use="required" />
+                        <xs:attribute name="Rating" type="xs:string" use="optional" />
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </complexType>
+    </xs:element>
+</xs:schema>
